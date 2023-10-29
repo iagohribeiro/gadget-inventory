@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Prototype
-
+[Figma Project](https://www.figma.com/file/P33uFr96uPPgNpL1oy9e5F/Gadget-Inventory?type=design&node-id=3%3A2&mode=design&t=ducjazfMI65fUqh5-1)
 
 ## Checklist
 

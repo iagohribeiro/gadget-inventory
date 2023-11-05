@@ -1,20 +1,112 @@
-<form>
-    <div>
-            <label for="modelo">Modelo</label>
+<header>
+    <app-menu></app-menu>
+</header>
+<body>
+    <form>
+        <div>
+            <label for="modelo">Gadget</label>
             <input type="text" id="modelo" class="form-control">
-    </div>
+        </div>
+        
+        <div>
+           <label for="marca">Brand</label>
+            <input type="text" id="marca" class="form-control">
+        </div>
     
-    <div>
-       <label for="marca">Marca</label>
-        <input type="text" id="marca" class="form-control">
+        <div>
+            <label for="serial">Serial Number</label>
+             <input type="text" id="serial" class="form-control">
+         </div>
+<!-- using mask-->
+         <div>
+            <label for="coverage">Coverage</label>
+             <input type="text" id="coverage" class="form-control" placeholder="dd/mm/yyyy"
+             onkeyup="
+                 var v = this.value;
+                 if (v.match(/^\d{2}$/) !== null) {
+                     this.value = v + '/';
+                 } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                     this.value = v + '/';
+                 }"
+             maxlength="10">
+         </div>
+       
+        <div>
+            <button class="btn btn-success" type="submit" style="background-color: #1D72DB;">Cadastrar</button>
+        </div>
+    </form>
+</body>
+<app-footer></app-footer>
+<!-- Template from Figma. Enable it in othe moment
+<div style="width: 1512px; height: 982px; position: relative; background: white">
+    <div style="left: 595px; top: 889px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">Prev</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: #1D72DB; border-radius: 4px; border: 1px #1D72DB solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">1</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">2</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">3</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">4</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">Next</div>
+      </div>
     </div>
-
-    <div>
-        <label for="serial">Numero de Serie</label>
-         <input type="text" id="serial" class="form-control">
-     </div>
-   
-    <div>
-        <button class="btn btn-success" type="submit">Cadastrar</button>
+    <div style="width: 1512px; height: 56px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; left: 0px; top: 0px; position: absolute; background: #2C2F33; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+      <div style="width: 65px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+        <img style="width: 65px; height: 27px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)" src="https://via.placeholder.com/65x27" />
+      </div>
+      <div style="justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+        <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="color: #F8F9FA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Home</div>
+        </div>
+        <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="color: #CED4DA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Gadgets</div>
+        </div>
+        <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="color: #CED4DA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Coverage</div>
+        </div>
+        <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Metrics</div>
+        </div>
+      </div>
     </div>
-</form>
+    <div style="height: 38px; left: 243px; top: 208px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+      <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Gadget Model</div>
+      </div>
+    </div>
+    <div style="height: 38px; left: 505px; top: 208px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+      <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Brand</div>
+      </div>
+    </div>
+    <div style="height: 38px; left: 767px; top: 208px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+      <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Serial Number</div>
+      </div>
+    </div>
+    <div style="height: 38px; left: 1029px; top: 208px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+      <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Coverage</div>
+      </div>
+    </div>
+    <div style="padding-left: 24px; padding-right: 24px; padding-top: 16px; padding-bottom: 16px; left: 1189px; top: 277px; position: absolute; background: #1D72DB; border-radius: 6px; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+      <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 600; line-height: 18px; word-wrap: break-word">Add</div>
+    </div>
+    <div style="height: 112px; left: 0px; top: 379px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+      <div style="align-self: stretch; height: 112px; padding-left: 162px; padding-right: 162px; padding-top: 32px; padding-bottom: 32px; background: white; border-bottom: 1px #DEE2E6 dotted; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+        <div style="flex-direction: column; justify-content: flex-start; align-items: center; display: flex">
+          <div style="color: #343A40; font-size: 40px; font-family: Inter; font-weight: 700; word-wrap: break-word">Gadgets List</div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->

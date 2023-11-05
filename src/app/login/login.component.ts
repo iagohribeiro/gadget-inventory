@@ -1,3 +1,4 @@
+import { MenuComponent } from './../menu/menu.component';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 

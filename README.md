@@ -13,15 +13,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Checklist
 
 - [x] Create the repository on GitHub with the Gitflow structure, i.e. main and develop branches.
-- [ ] Use components from a CSS framework (Bootstrap, Materialize, or other)
-- [ ] Present the screens with a responsive layout, whether or not using a CSS framework.
-- [ ] Build web pages using the concept of components.
-- [ ] Create the layout of the application with components, i.e. the header and footer need to be components.
-- [ ] Use at least two types of data binding (Interpolation, Property Binding, Event Binding, and Two Way Data Binding).
-- [ ] Pass data via the component hierarchy, i.e. using @Input or @Output.
-- [ ] Map components to routes in the routes module.
-- [ ] Create navigation between pages using routes.
-- [ ] Pass data between components representing different screens via route parameters.
+- [x] Use components from a CSS framework (Bootstrap, Materialize, or other)
+- [x] Present the screens with a responsive layout, whether or not using a CSS framework.
+- [x] Build web pages using the concept of components.
+- [x] Create the layout of the application with components, i.e. the header and footer need to be components.
+- [x] Use at least two types of data binding (Interpolation, Property Binding, Event Binding, and Two Way Data Binding).
+- [x] Pass data via the component hierarchy, i.e. using @Input or @Output.
+- [x] Map components to routes in the routes module.
+- [x] Create navigation between pages using routes.
+- [x] Pass data between components representing different screens via route parameters.
 - [ ] Validate form fields with REGEX and display errors.
 - [ ] Disable the submit button while the form is invalid.
 - [ ] Make requests to the API and handle the response with Promises or Observables.
@@ -32,7 +32,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [ ] Build and deploy the application.
 
 ## How to execute the application
-
+To login in to the aplication, you need to use the users below:
+- Normal user: normaluser@host.com (limited access) - No password required
+- Admin user: admin@host.com (full access) - No password required
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -1,20 +1,53 @@
 <!-- Property binding-->
-<nav style="background-color: #2C2F33;" [hidden]="this.isHideMenu">
+<!--<nav style="background-color: #2C2F33;">
     <div class="nav-wrapper" style="background-color: #2C2F33;">
         <a href="#!" class="brand-logo">Logo</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">Gadgets</a></li>
-        <li><a href="collapsible.html">Coverage</a></li>
-        <li><a href="mobile.html">Metrics</a></li>
+        <li><a href="login.html">Home</a></li>
+        <li><a href="form.html" [hidden]="this.isHideMenu">Gadgets</a></li>
+        <li><a href="coverage.html" [hidden]="this.isHideMenu">Coverage</a></li>
+        <li><a href="metrics.html" [hidden]="this.isHideMenu">Metrics</a></li>
+        </ul>
+    </div>
+</nav>-->
+
+<nav style="background-color: #2C2F33; height: 56px">
+    <div style="width: 1512px; height: 56px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: #2C2F33; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+        <div style="width: 65px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+            <img style="width: 65px; height: 27px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)" src="../../assets/logo.png" />
+        </div>
+        <ul class="right hide-on-med-and-down">
+            <div style="justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+            <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="color: #F8F9FA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">
+                    <li><a href="login.html">Home</a></li>
+                </div>
+            </div>
+            <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="color: #CED4DA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">
+                    <li><a href="form.html" [hidden]="this.isHideMenu">Gadgets</a></li>
+                </div>
+            </div>
+            <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="color: #CED4DA; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">
+                    <li><a href="coverage.html" [hidden]="this.isHideMenu">Coverage</a></li>
+                </div>
+            </div>
+            <div style="padding-left: 16px; padding-right: 16px; padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">
+                    <li><a href="metrics.html" [hidden]="this.isHideMenu">Metrics</a></li>
+                </div>
+            </div>
+            </div>
         </ul>
     </div>
 </nav>
     
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Home</a></li>
-    <li><a href="badges.html">Gadgets</a></li>
-    <li><a href="collapsible.html">Coverage</a></li>
-    <li><a href="mobile.html">Metrics</a></li>
+    <li><a href="login.html">Home</a></li>
+    <li><a href="form.html">Gadgets</a></li>
+    <li><a href="coverage.html">Coverage</a></li>
+    <li><a href="metrics.html">Metrics</a></li>
 </ul>
+

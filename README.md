@@ -22,8 +22,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] Map components to routes in the routes module.
 - [x] Create navigation between pages using routes.
 - [x] Pass data between components representing different screens via route parameters.
-- [ ] Validate form fields with REGEX and display errors.
-- [ ] Disable the submit button while the form is invalid.
+- [x] Validate form fields with REGEX and display errors.
+- [x] Disable the submit button while the form is invalid.
 - [ ] Make requests to the API and handle the response with Promises or Observables.
 - [ ] Register an entity on the JSON Server.
 - [ ] Present a list of data with the ngFor structural directive.

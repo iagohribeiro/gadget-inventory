@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GadgetComponent } from './gadget/gadget.component';
 
 const routes: Routes = [
+  {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'form', component:FormComponent},
   {path:'gadget', component:GadgetComponent}

@@ -1,3 +1,6 @@
+import { GadgetPromiseService } from './../gadget-promise.service';
+import { Subscription } from 'rxjs';
+import { SessionService } from './../session.service';
 import { Gadget } from './../gadget';
 import { NgFor } from '@angular/common';
 import { LoginComponent } from './../login/login.component';
@@ -26,8 +29,10 @@ export class FormComponent implements OnInit, OnChanges {
   brand:string='';
   serial:string='';
   coverage:string='';
-
-  constructor(private route: ActivatedRoute, private router: Router, private localStore: LocalService) {}
+  subscription!:Subscription;
+  constructor(private route: ActivatedRoute, private router: Router,
+              private localStore: LocalService, private sessionService:SessionService,
+              private gadgetPromiseService:GadgetPromiseService) {}
   
   ngOnChanges():void{
     this.notify.emit('Successful login!');
@@ -40,19 +45,32 @@ export class FormComponent implements OnInit, OnChanges {
         this.isHideMenu=true;
       }
     });
-    Object.keys(localStorage).forEach(data => 
+    if (!this.isHideMenu) //that means the admin user was logged - They have access to all Gadgets
     {
-      let item = this.localStore.getData(data) || '';
-      if (item != '')
-        this.listGadgets.push(JSON.parse(item) as Gadget)
-    });
+      let item = this.gadgetPromiseService.getAll().then((gadgets: Gadget[]) =>{
+          for (let gadget of gadgets)
+          {
+            this.listGadgets.push(gadget);
+          }
+      }
+      );
+    }
+    else
+    {
+      Object.keys(localStorage).forEach(data => 
+        {
+          let item = this.localStore.getData(data) || '';
+          if (item != '')
+            this.listGadgets.push(JSON.parse(item) as Gadget)
+        });
+    }
   }
 
   ngAfterViewInit(): void{
     M.Sidenav.init(this.sideNav?.nativeElement);
   }
 
-  submitTemplate(){
+  async submitTemplate(){
     if(this.editMode)
     {
       let indexFind = this.listGadgets.findIndex(x => x.serial == this.serial)
@@ -61,15 +79,33 @@ export class FormComponent implements OnInit, OnChanges {
       this.listGadgets[indexFind].serial = this.serial;
       this.listGadgets[indexFind].coverage = this.coverage;
       this.myForm.reset();
-      this.localStore.saveData(this.listGadgets[indexFind].serial,JSON.stringify(this.listGadgets[indexFind]));
-      this.editMode = false;
+      console.log(this.isHideMenu)
+      if(!this.isHideMenu)
+      {
+        await this.gadgetPromiseService.save(this.listGadgets[indexFind]);
+      }
+      else{
+        this.localStore.saveData(this.listGadgets[indexFind].serial,JSON.stringify(this.listGadgets[indexFind]));
+        this.editMode = false;
+      }
+      
     }
     else
     {
-      const newGadget:Gadget = new Gadget(this.model, this.brand, this.serial, this.coverage);
-      this.listGadgets.push(newGadget);
-      console.log(this.listGadgets);
-      this.localStore.saveData(newGadget.serial,JSON.stringify(newGadget));
+      console.log(this.isHideMenu)
+      if(!this.isHideMenu)
+      {
+        const newGadget:Gadget = new Gadget(this.serial, this.model, this.brand, this.serial, this.coverage);
+        this.listGadgets.push(newGadget);
+        console.log(this.listGadgets);
+        await this.gadgetPromiseService.save(newGadget);
+      }
+      else{
+        const newGadget:Gadget = new Gadget(this.serial, this.model, this.brand, this.serial, this.coverage);
+        this.listGadgets.push(newGadget);
+        console.log(this.listGadgets);
+        this.localStore.saveData(newGadget.serial,JSON.stringify(newGadget));
+      }
       this.myForm.reset();
     }
 

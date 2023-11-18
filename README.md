@@ -29,7 +29,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] Present a list of data with the ngFor structural directive.
 - [x] Use the ngIf directive
 - [x] Format the data presentation with Pipes.
-- [ ] Build and deploy the application.
+- [x] Build and deploy the application.
 
 ## How to execute the application
 To login in to the aplication, you need to use the users below:

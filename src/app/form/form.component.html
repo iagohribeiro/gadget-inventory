@@ -1,0 +1,124 @@
+<header>
+    <app-menu #menu [hidden]="menu.hide('forms')">
+    </app-menu>
+</header>
+
+<body>
+  <div style="width: 1512px; height: 982px; position: relative; background: white">
+    <div style="left: 595px; top: 889px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">Prev</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: #1D72DB; border-radius: 4px; border: 1px #1D72DB solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">1</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">2</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">3</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">4</div>
+      </div>
+      <div style="padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 4px; border: 1px #E9ECEF solid; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="text-align: center; color: #6C757D; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">Next</div>
+      </div>
+    </div>
+    <div style="width: 1512px; height: 458px; left: 0px; top: 379px; position: absolute" [hidden]="this.isHideMenu">
+      <div style="width: 1512px; height: 112px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div style="align-self: stretch; height: 112px; padding-left: 162px; padding-right: 162px; padding-top: 32px; padding-bottom: 32px; background: white; border-bottom: 1px #DEE2E6 dotted; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: center; display: flex">
+            <div style="color: #343A40; font-size: 40px; font-family: Inter; font-weight: 700; word-wrap: break-word">Gadgets List</div>
+          </div>
+        </div>
+      </div>
+      <table class="highlight" style="width: 1265px; height: 321px; left: 154px; top: 137px; position: absolute" *ngIf="listGadgets && listGadgets!.length>0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Gadget</th>
+            <th>Brand</th>
+            <th>Serial Number</th>
+            <th>Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let gadget of listGadgets">
+              <td>{{listGadgets.indexOf(gadget)}}</td>
+              <td>{{gadget.model | uppercase}}</td>
+              <td>{{gadget.brand | uppercase}}</td>
+              <td>{{gadget.serial | uppercase}}</td>
+              <td>{{gadget.coverage}}</td>
+              <td class="right">
+                <a>
+                  <i class="material-icons my-icon-size" (click)="editGadget(gadget)">
+                    edit
+                  </i>
+                </a>
+                <a>
+                  <i class="material-icons my-icon-size" (click)="deleteGadget(gadget)">
+                    delete
+                  </i>
+                </a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form class="myForm-form" #myForm="ngForm" (ngSubmit)="submitTemplate()">
+      <div style="width: 1512px; height: 250px; left: 0px; top: 77px; position: absolute">
+        <div style="width: 240px; height: 38px; left: 243px; top: 131px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+          <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+            <input placeholder="Gadget Model*" [(ngModel)]="this.model" pattern="^[a-zA-Z0-9]*[a-zA-Z]+[a-zA-Z0-9]*$" class="form-control" #name="ngModel" name="model" id="model" type="text" style="height: 38px;flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word" required>
+          </div>
+          <div style="color: #ff0000" [hidden]="name.valid || name.untouched">
+            Please, inform the Gadget Model!
+          </div>
+        </div>
+        <div style="width: 240px; height: 38px; left: 505px; top: 131px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+          <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+            <input placeholder="Brand" [(ngModel)]="this.brand" pattern="^[a-zA-Z0-9]*[a-zA-Z]+[a-zA-Z0-9]*$" class="form-control" #gadgetBrand="ngModel" name="brand" id="brand" type="text" style="height: 38px; flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+          </div>
+          <div style="color: #ff0000" [hidden]="gadgetBrand.valid">
+            Wrong Gadget Brand!
+          </div>
+        </div>
+        <div style="width: 240px; height: 38px; left: 767px; top: 131px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+          <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+            <input placeholder="Serial Number*" [(ngModel)]="this.serial" pattern="^[a-zA-Z0-9_]*$" class="form-control" #gadgetSerial="ngModel" name="serial" id="serial" type="text" style="height: 38px; flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word" [disabled]="this.editMode" required>
+          </div>
+          <div style="color: #ff0000" [hidden]="gadgetSerial.valid || gadgetSerial.untouched">
+            Please, inform the Gadget Serial Number!
+          </div>
+        </div>
+        <div style="width: 240px; height: 38px; left: 1029px; top: 131px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+          <div style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 9px; padding-bottom: 9px; background: white; border-radius: 6px; border: 1px #DEE2E6 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+            <input placeholder="Coverage" [(ngModel)]="this.coverage" pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" class="form-control" #gadgetCoverage="ngModel" name="coverage" id="coverage" type="text" style="height: 38px; flex: 1 1 0; color: #ADB5BD; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word" onkeyup="
+                  var v = this.value;
+                  if (v.match(/^\d{2}$/) !== null) {
+                      this.value = v + '/';
+                  } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                      this.value = v + '/';
+                  }"
+                  maxlength="10">
+          </div>
+          <div style="color: #ff0000" [hidden]="gadgetCoverage.valid">
+            Wrong Gadget Coverage!
+          </div>
+        </div>
+        <button class="btn btn-success" type="submit" name="submit" style="font-size: 16px; font-family: Inter; font-weight: 600; line-height: 18px; word-wrap: break-word; width: 80px; height: 50px; padding-left: 24px; padding-right: 24px; padding-top: 16px; padding-bottom: 16px; left: 1189px; top: 210px; position: absolute; background: #1D72DB; border-radius: 6px; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex" [disabled]="!myForm.valid">
+        Add
+        </button>
+        </div>
+    </form>
+      <div style="width: 1512px; height: 94px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div style="align-self: stretch; height: 112px; padding-left: 162px; padding-right: 162px; padding-top: 32px; padding-bottom: 32px; background: white; border-bottom: 1px #DEE2E6 dotted; flex-direction: column; justify-content: center; align-items: flex-start; display: flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: center; display: flex">
+            <div style="color: #343A40; font-size: 40px; font-family: Inter; font-weight: 700; word-wrap: break-word">Gadgets Registration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<app-footer></app-footer>

@@ -1,0 +1,85 @@
+<header>
+    <app-menu #menu [hidden]="menu.hide('login')">
+    </app-menu>
+</header>
+<!--<header>
+    <nav>
+        <div class="nav-wrapper" style="background-color: #2C2F33;">
+            <h2>LOGIN PAGE</h2><br>
+        </div>
+    </nav>
+</header>
+<body>
+    <form>
+        <div>
+            <label for="email">E-mail</label>
+            <input type="text" id="email" class="form-control">
+        </div>
+        
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" class="form-control">
+        </div>
+       
+        <div>
+            <button class="btn btn-primary" (click)="gotoForm()" style="background-color: #1D72DB;">Entrar</button>
+        </div>
+    </form>
+</body>
+<app-footer></app-footer>-->
+
+<body>
+    <form>
+        <div style="width: 1512px; height: 982px; position: relative; background: white">
+            <div style="width: 498px; height: 943px; left: 507px; top: 20px; position: absolute; background: white; box-shadow: 24.233430862426758px 0px 50.4863166809082px rgba(62, 87, 117, 0.38)"></div>
+            <div style="width: 199px; height: 23px; left: 656px; top: 280px; position: absolute; text-align: center; color: #303842; font-size: 16.16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Login into your account</div>
+            <div style="width: 442.78px; height: 79.21px; left: 534.09px; top: 345.33px; position: absolute">
+            <div style="width: 442.78px; height: 47.15px; left: 0px; top: 32.06px; position: absolute; background: #F1F3F6; border-radius: 8.08px"></div>
+            <div style="width: 52.09px; height: 47.15px; left: 390.69px; top: 32.06px; position: absolute">
+                <div style="width: 52.09px; height: 47.15px; left: 0px; top: 0px; position: absolute; background: #1D72DB; border-radius: 8.08px; border: 1px #1D72DB solid"></div>
+                <div style="width: 25px; height: 22.63px; left: 13.54px; top: 12.26px; position: absolute">
+                <div style="width: 25px; height: 22.63px; left: 0px; top: 0px; position: absolute">
+                    <img src = "../../assets/mail.svg"/>
+                </div>
+                <div style="width: 20.84px; height: 16.97px; left: 2.08px; top: 2.83px; position: absolute"></div>
+                </div>
+            </div>
+            <div style="width: 117.63px; height: 22.41px; left: 0px; top: 0px; position: absolute; color: #303842; font-size: 16.16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Email address</div>
+                <input placeholder="email@host.com" style="width: 157px; height: 18px; left: 20.91px; top: 45.67px; position: absolute; color: #303842; font-size: 14.14px; font-family: Poppins; font-weight: 400" type="text" id="email" name="user" class="form-control" [(ngModel)]="this.user">
+            </div>
+            <div style="width: 442.78px; height: 79.21px; left: 534.09px; top: 450.95px; position: absolute">
+            <div style="width: 442.78px; height: 47.15px; left: 0px; top: 32.06px; position: absolute; background: #F1F3F6; border-radius: 8.08px"></div>
+            <div style="width: 52.09px; height: 47.15px; left: 390.69px; top: 32.06px; position: absolute; background: #1D72DB; border-radius: 8.08px">
+                
+            </div>
+            <div style="width: 25px; height: 22.63px; left: 404.23px; top: 44.32px; position: absolute">
+                <div style="width: 25px; height: 22.63px; left: 0px; top: 0px; position: absolute">
+                    <img src = "../../assets/lock.svg"/>
+                </div>
+                <div style="width: 18.75px; height: 18.86px; left: 3.13px; top: 1.89px; position: absolute">
+                    
+                </div>
+            </div>
+            <div style="width: 80.48px; height: 22.41px; left: 0px; top: 0px; position: absolute; color: #303842; font-size: 16.16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Password</div>
+                <input style="width: 148.58px; height: 19.61px; left: 20.84px; top: 45.26px; position: absolute; color: #303842; font-size: 14.14px; font-family: Poppins; font-weight: 400; word-wrap: break-word" type="password" id="senha"  class="form-control">
+            </div>
+            <div style="width: 130px; height: 19px; left: 848px; top: 541px; position: absolute; color: #1E2772; font-size: 14.14px; font-family: Poppins; font-weight: 400; text-decoration: underline; word-wrap: break-word">Forgot password?</div>
+            <div style="width: 442.78px; height: 47.15px; left: 534.09px; top: 585.80px; position: absolute">
+                <div>
+                    <button style="width: 442.78px; height: 47.15px; left: 0px; top: 0px; position: absolute; background: #1D72DB; box-shadow: 0px 12.116715431213379px 24.233430862426758px rgba(29, 114, 219, 0.49); border-radius: 8.08px" class="btn btn-primary" (click)="gotoForm()">Entrar</button>
+                </div>
+            </div>
+            <div style="width: 442.78px; height: 47.15px; left: 534.09px; top: 726.31px; position: absolute">
+            <div style="width: 442.78px; height: 47.15px; left: 0px; top: 0px; position: absolute; border-radius: 8.08px; border: 1.01px #1D72DB solid"></div>
+            <div style="width: 100.09px; height: 22.41px; left: 170.86px; top: 12.26px; position: absolute; text-align: center; color: #1D72DB; font-size: 16.16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Signup now</div>
+            </div>
+            <div style="width: 442.26px; left: 535.13px; top: 669.73px; position: absolute">
+            <div style="width: 190.14px; height: 0px; left: 0px; top: 10.37px; position: absolute; border: 1.01px #C2C2C2 solid"></div>
+            <div style="width: 190.14px; height: 0px; left: 252.13px; top: 10.37px; position: absolute; border: 1.01px #C2C2C2 solid"></div>
+            <div style="width: 20.64px; height: 19.61px; left: 210.45px; top: 0px; position: absolute; color: #C2C2C2; font-size: 14.14px; font-family: Poppins; font-weight: 400; word-wrap: break-word">OR</div>
+            </div>
+            <div style="width: 228px; height: 92px;flex-shrink: 0; background: url(../../assets/logo.png), lightgray 50% / cover no-repeat;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); left: 641px; top: 157px; position: absolute"></div>
+        </div>
+    </form>
+  </body>
+  <app-footer></app-footer>

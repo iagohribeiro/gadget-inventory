@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin@host.com",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "normaluser@host.com",
+      "password": "normaluser"
+    },
+    {
+      "username": "iagoh@host.com",
+      "password": "iagoh",
+      "id": 3
+    }
+  ],
+  "gadgets": [
+    {
+      "id": "1ABC",
+      "model": "iPhone30",
+      "brand": "Apple",
+      "serial": "1ABC",
+      "coverage": "12/12/2023",
+      "userId": 1
+    },
+    {
+      "id": "1ABCD",
+      "model": "iPhone50",
+      "brand": "Apple",
+      "serial": "1ABCD",
+      "coverage": "12/12/2023",
+      "userId": 1
+    },
+    {
+      "id": "1ABCDE",
+      "model": "iPhone6",
+      "brand": "Apple",
+      "serial": "1ABCDE",
+      "coverage": "12/12/2023",
+      "userId": 1
+    },
+    {
+      "id": "1ABCDEF",
+      "model": "iPhone7",
+      "brand": "Apple",
+      "serial": "1ABCDEF",
+      "coverage": "12/12/2023",
+      "userId": 2
+    }
+  ]
+}

@@ -28,7 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] Register an entity on the JSON Server.
 - [x] Present a list of data with the ngFor structural directive.
 - [x] Use the ngIf directive
-- [ ] Format the data presentation with Pipes.
+- [x] Format the data presentation with Pipes.
 - [ ] Build and deploy the application.
 
 ## How to execute the application

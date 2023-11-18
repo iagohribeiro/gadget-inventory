@@ -2,45 +2,6 @@
     <app-menu #menu [hidden]="menu.hide('forms')">
     </app-menu>
 </header>
-<!--<body>
-    <form>
-        <div>
-            <label for="modelo">Gadget</label>
-            <input type="text" id="modelo" class="form-control">
-        </div>
-        
-        <div>
-           <label for="marca">Brand</label>
-            <input type="text" id="marca" class="form-control">
-        </div>
-    
-        <div>
-            <label for="serial">Serial Number</label>
-             <input type="text" id="serial" class="form-control">
-         </div>
- using mask
-         <div>
-            <label for="coverage">Coverage</label>
-             <input type="text" id="coverage" class="form-control" placeholder="dd/mm/yyyy"
-             onkeyup="
-                 var v = this.value;
-                 if (v.match(/^\d{2}$/) !== null) {
-                     this.value = v + '/';
-                 } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
-                     this.value = v + '/';
-                 }"
-             maxlength="10">
-         </div>
-       
-        <div>
-            <button class="btn btn-success" type="submit" style="background-color: #1D72DB;">Cadastrar</button>
-        </div>
-    </form>
-    <div>
-      {{this.hideMenu}}
-    </div>
-</body>
-<app-footer></app-footer> -->
 
 <body>
   <div style="width: 1512px; height: 982px; position: relative; background: white">
@@ -85,9 +46,9 @@
         <tbody>
           <tr *ngFor="let gadget of listGadgets">
               <td>{{listGadgets.indexOf(gadget)}}</td>
-              <td>{{gadget.model}}</td>
-              <td>{{gadget.brand}}</td>
-              <td>{{gadget.serial}}</td>
+              <td>{{gadget.model | uppercase}}</td>
+              <td>{{gadget.brand | uppercase}}</td>
+              <td>{{gadget.serial | uppercase}}</td>
               <td>{{gadget.coverage}}</td>
               <td class="right">
                 <a>
@@ -104,25 +65,6 @@
           </tr>
         </tbody>
       </table>
-      <!--<div style="width: 1265px; height: 321px; left: 154px; top: 137px; position: absolute">
-        <div style="width: 1265px; height: 78.64px; left: 0px; top: 80.25px; position: absolute; background: #F8F9FA"></div>
-        <div style="width: 1265px; height: 78.64px; left: 0px; top: 240.75px; position: absolute; background: #F8F9FA"></div>
-        <div style="width: 12.54px; height: 30.50px; left: 22.79px; top: 24.08px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">#</div>
-        <div style="width: 9.12px; height: 30.50px; left: 22.79px; top: 105.93px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">1</div>
-        <div style="width: 81.09px; height: 41px; left: 197.48px; top: 100px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">iPhone 6</div>
-        <div style="width: 51.52px; height: 44px; left: 433.11px; top: 100px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">Apple</div>
-        <div style="width: 55.84px; height: 44.94px; left: 757.86px; top: 99.51px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">1ABC</div>
-        <div style="width: 86.81px; height: 45px; left: 1025.55px; top: 100px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 28px; word-wrap: break-word">12-10-2014</div>
-        <div style="width: 76.32px; height: 31px; left: 200.34px; top: 26px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">Gadget</div>
-        <div style="width: 68.69px; height: 31px; left: 433.11px; top: 25px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">Brand</div>
-        <div style="width: 119.25px; height: 32px; left: 735.53px; top: 24px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">Serial Number</div>
-        <div style="width: 119.25px; height: 32px; left: 993.11px; top: 24px; position: absolute; color: #303842; font-size: 16px; font-family: Inter; font-weight: 800; word-wrap: break-word">Coverage</div>
-        <div style="width: 1265px; height: 0px; left: 0px; top: 0px; position: absolute; border: 1px #DEE2E6 solid"></div>
-        <div style="width: 1265px; height: 0px; left: 0px; top: 160.50px; position: absolute; border: 1px #DEE2E6 solid"></div>
-        <div style="width: 1265px; height: 0px; left: 0px; top: 240.75px; position: absolute; border: 1px #DEE2E6 solid"></div>
-        <div style="width: 1265px; height: 0px; left: 0px; top: 321px; position: absolute; border: 1px #DEE2E6 solid"></div>
-        <div style="width: 1265px; height: 0px; left: 0px; top: 80.25px; position: absolute; border: 2px #DEE2E6 solid"></div>
-      </div>-->
     </div>
     <form class="myForm-form" #myForm="ngForm" (ngSubmit)="submitTemplate()">
       <div style="width: 1512px; height: 250px; left: 0px; top: 77px; position: absolute">
@@ -179,7 +121,4 @@
       </div>
     </div>
 </body>
-<div>
-
-</div>
 <app-footer></app-footer>

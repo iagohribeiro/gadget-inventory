@@ -4,8 +4,8 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path:'', component:LoginComponent},
-  {path: 'form', component:FormComponent}
+  {path:'login', component:LoginComponent},
+  {path:'form', component:FormComponent}
 ];
 
 @NgModule({

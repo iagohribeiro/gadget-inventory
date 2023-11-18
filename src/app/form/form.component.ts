@@ -34,6 +34,7 @@ export class FormComponent implements OnInit, OnChanges {
               private localStore: LocalService, private sessionService:SessionService,
               private gadgetPromiseService:GadgetPromiseService) {}
   
+
   ngOnChanges():void{
     this.notify.emit('Successful login!');
   }
@@ -47,12 +48,24 @@ export class FormComponent implements OnInit, OnChanges {
     });
     if (!this.isHideMenu) //that means the admin user was logged - They have access to all Gadgets
     {
-      let item = this.gadgetPromiseService.getAll().then((gadgets: Gadget[]) =>{
+      /*let item = this.gadgetPromiseService.getAll().then((gadgets: Gadget[]) =>{
           for (let gadget of gadgets)
           {
             this.listGadgets.push(gadget);
           }
       }
+      );*/
+      let item = this.gadgetPromiseService.getAllObservable().subscribe(
+        (gadgets: Gadget[]) =>{
+          for (let gadget of gadgets)
+          {
+            this.listGadgets.push(gadget);
+          }
+        },
+        (error) =>{
+          console.log(error);
+          alert(error.errorMessage);
+        }
       );
     }
     else
@@ -82,7 +95,15 @@ export class FormComponent implements OnInit, OnChanges {
       console.log(this.isHideMenu)
       if(!this.isHideMenu)
       {
-        await this.gadgetPromiseService.save(this.listGadgets[indexFind]);
+        this.gadgetPromiseService.update(this.listGadgets[indexFind]).subscribe({
+          next: (gadget:Gadget)=>{
+
+          },
+          error: (error) =>{
+            console.log(error);
+            alert(error.errorMessage);
+          }
+        });
       }
       else{
         this.localStore.saveData(this.listGadgets[indexFind].serial,JSON.stringify(this.listGadgets[indexFind]));
@@ -120,6 +141,15 @@ export class FormComponent implements OnInit, OnChanges {
   deleteGadget(gadget:Gadget){
     let indexFind = this.listGadgets.indexOf(gadget);
     this.listGadgets.splice(indexFind, 1);
-    this.localStore.removeData(gadget.serial);
+    this.localStore.removeData(gadget.id);
+
+    this.gadgetPromiseService.delete(gadget.id).subscribe({
+      next: (gadget:Gadget)=>{
+      },
+      error: (error) =>{
+        console.log(error);
+        alert(error.errorMessage);
+      }
+    });
   }
 }

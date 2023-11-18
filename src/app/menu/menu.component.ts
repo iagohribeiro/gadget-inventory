@@ -27,6 +27,12 @@ export class MenuComponent implements OnInit, OnChanges{
   logout(){
     this.sessionService.logout(true);
   }
+  home(){
+    this.sessionService.home(true);
+  }
+  gadget(){
+    this.sessionService.gadget(true);
+  }
 
   ngOnInit(){}
 }

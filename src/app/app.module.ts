@@ -8,7 +8,8 @@ import { FormComponent } from './form/form.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { GadgetComponent } from './gadget/gadget.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http'
     LoginComponent,
     FormComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    GadgetComponent
   ],
   imports: [
     BrowserModule,

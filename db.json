@@ -19,7 +19,7 @@
   "gadgets": [
     {
       "id": "1ABC",
-      "model": "iPhone4",
+      "model": "iPhone30",
       "brand": "Apple",
       "serial": "1ABC",
       "coverage": "12/12/2023",
@@ -27,7 +27,7 @@
     },
     {
       "id": "1ABCD",
-      "model": "iPhone5",
+      "model": "iPhone50",
       "brand": "Apple",
       "serial": "1ABCD",
       "coverage": "12/12/2023",
@@ -48,13 +48,6 @@
       "serial": "1ABCDEF",
       "coverage": "12/12/2023",
       "userId": 2
-    },
-    {
-      "id": "12312",
-      "model": "Test",
-      "brand": "123A",
-      "serial": "12312",
-      "coverage": "12/12/1212"
     }
   ]
 }
